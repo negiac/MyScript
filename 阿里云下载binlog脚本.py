@@ -38,7 +38,7 @@ class binlogDownLoad(object):
 			#urllib.request.urlretrieve(DownloadLink,path)
 			#3.6
 
-			#urllib.request.urlretrieve(DownloadLink,path)					
+			urllib.request.urlretrieve(DownloadLink,path)					
 			#print (DownloadLink)
 			print (path)
 
@@ -76,9 +76,6 @@ class binlogDownLoad(object):
 
 
 	#配置starttime和endtime，下载时间区间
-
-
-
 	def allPageNume(self,pageNum,StartTime,EndTime):
 		response=alirds_req(pageNum,StartTime,EndTime)
 		#print (type(response))
