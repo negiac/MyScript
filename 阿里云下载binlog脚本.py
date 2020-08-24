@@ -15,15 +15,16 @@ import datetime
 #python 3.6
 import urllib.request
 import time
+import sys
 
 class binlogDownLoad(object):
 	"""docstring for ClassName"""
 	def __init__(self):
-		self.accessKeyId ='xxxxxxx'
-		self.accessSecret='xxxxxxx'
+		self.accessKeyId ='xxxx'
+		self.accessSecret='xxxx'
 		self.RegionId='cn-hangzhou'
 		self.accept_format='json'
-		self.DBInstanceId='rm-xxxxxxxx'
+		self.DBInstanceId='rm-xxxxxxxxx'
 
 		
 	def isNotFileExists(self,path):
@@ -37,7 +38,6 @@ class binlogDownLoad(object):
 			#2.7
 			#urllib.request.urlretrieve(DownloadLink,path)
 			#3.6
-
 			urllib.request.urlretrieve(DownloadLink,path)					
 			#print (DownloadLink)
 			print (path)
@@ -76,8 +76,11 @@ class binlogDownLoad(object):
 
 
 	#配置starttime和endtime，下载时间区间
+
+
+
 	def allPageNume(self,pageNum,StartTime,EndTime):
-		response=alirds_req(pageNum,StartTime,EndTime)
+		response=self.alirds_req(pageNum,StartTime,EndTime)
 		#print (type(response))
 		json_dump=json.loads(response)
 
@@ -98,7 +101,7 @@ class binlogDownLoad(object):
 		for pageNum in range(1,pageNumTotal+1):
 			for j in range(0,3):
 				try:
-					response=alirds_req(pageNum,StartTime,EndTime)
+					response=self.alirds_req(pageNum,StartTime,EndTime)
 					json_dump=json.loads(response)
 			
 					BinLogFile=json_dump.get('Items').get('BinLogFile')
@@ -108,11 +111,11 @@ class binlogDownLoad(object):
 						HostInstanceID=x.get('HostInstanceID')
 						LogFileName=x.get('LogFileName')
 						#print (DownloadLink)
-						mkdir_save_path(basePath, HostInstanceID)
+						self.mkdir_save_path(basePath, HostInstanceID)
 						path = basePath + '/' + str(HostInstanceID)+'/'+str(LogFileName)
 						#判断文件是否存在
-						if isNotFileExists(path)==True:
-							downLoad(path,DownloadLink)
+						if self.isNotFileExists(path)==True:
+							self.downLoad(path,DownloadLink)
 							i+=1
 					break		
 				except Exception as e:
