@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Date    : 2020-07-10 17:56:23
-# @Author  : Your Name (you@example.org)
-# @Link    : http://example.org
-# @Version : $Id$
-
+# @Author  : negiaC
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
