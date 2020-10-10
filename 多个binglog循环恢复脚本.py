@@ -55,6 +55,7 @@ def run(fileBasePath,fileName):
                                 n+=1
                         else:
                                 print(output)
+                                writeFile(file,d)
                                 break
                 else:
                         print(d)
