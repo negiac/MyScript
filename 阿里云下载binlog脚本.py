@@ -46,10 +46,10 @@ def mkdir_save_path(basePath, HostInstanceID):
 		return False
 
 def alirds_req(pageNum,StartTime,EndTime):
-	client = AcsClient('LTAI4G5xq34gBrAJgPJJF17r', 'YyLVdpwDrzbI7JiUacguxC6PcCVlWs', 'cn-hangzhou')
+	client = AcsClient('aa', 'aa', 'cn-hangzhou')
 	request = DescribeBinlogFilesRequest()
 	request.set_accept_format('json')
-	request.set_DBInstanceId("rm-bp106u25n65i4maqu")
+	request.set_DBInstanceId("rm-bp106u25naaaa65i4maqu")
 	# request.set_StartTime("2020-08-16T00:00:00Z")
 	# request.set_EndTime("2020-08-17T00:00:00Z")
 	#print(StartTime)
