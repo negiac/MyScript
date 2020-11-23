@@ -33,8 +33,8 @@ class dingding(object):
 
 
 if __name__ == "__main__":
-    api_url="https://oapi.dingtalk.com/robot/send?access_token=bd543546ebf2537d8ae117127e244f9b45484e" #webhook地址
+    api_url="https://oapi.dingtalk.com/robot/send?access_token=bd543546ebf2537d8ae117127e244f9b4" #webhook地址
     text="可以使用markdown格式(typora):表格示例\n------------------\n|列名1|列明2|列明3|\n|----|----|----|\n|数据1|数据2|数据3|\n|数据5|数据6|数据7|\n"
-    user=15821467737
+    user=138xxxxxxxx
     ding=dingding()
     ding.msg(api_url,text,user)
