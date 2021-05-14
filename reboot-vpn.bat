@@ -14,6 +14,7 @@ echo %date% %time% "VPN已重新启动" >>c:\errlog.log
 echo %date% %time% "VPN停用中...."
 taskkill /f /im SecUI.exe /t
 echo %date% %time% "VPN启动中...."
+rem start "" "C:\Program Files (x86)\V5VPN\SecUI.exe"
 "C:\Program Files (x86)\V5VPN\SecUI.exe"
 echo %date% %time% "VPN已重新启动...."
 
